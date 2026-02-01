@@ -1,0 +1,23 @@
+{
+    "tasks": [
+        {
+            "label": "Build and Run with Input",
+            "type": "shell",
+            "command": "echo [!time!] Build started & g++ -I\"${workspaceFolder}\\build\" \"${file}\" -o \"${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe\" 2> compile_error.txt && (del compile_error.txt 2>nul & echo [!time!] Running... & \"${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe\" < input.txt > output.txt & echo [!time!] Done)",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/v:on", "/c"]
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build to workspace/build/, run with input.txt, output to output.txt"
+        }
+    ],
+    "version": "2.0.0"
+}
