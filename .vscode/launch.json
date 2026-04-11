@@ -59,8 +59,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/project/APCS-GOGOGO/初階題庫/d058.basic.SGN",
-      "program": "d:/project/APCS-GOGOGO/初階題庫/d058.basic.SGN/build/Debug/outDebug",
+      "cwd": "d:/project/codevLabs/初階題庫/迴圈/不要學我扮鬼臉",
+      "program": "d:/project/codevLabs/初階題庫/迴圈/不要學我扮鬼臉/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
