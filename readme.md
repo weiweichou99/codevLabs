@@ -18,6 +18,7 @@
    ```
 3. 將 `C:\msys64\ucrt64\bin` 路徑加入系統環境變數 Path 中。
 4. 命令提示字元輸入 `g++ --version` 確認安裝成功。
+5. 根目錄下建立 build 目錄，編譯才能順利。
 
 > **📌 備註**：也可選擇 MinGW，但 MSYS2 更現代和完整。
 
@@ -81,7 +82,7 @@ g++ helloworld.cpp -o helloworld
 
 這樣程式會讀取 input.txt 作為標準輸入。
 
-## 5. � 快速編譯執行（Ctrl+Shift+B）
+## 5. 快速編譯執行（Ctrl+Shift+B）
 
 本專案已設定 `tasks.json`，按 `Ctrl+Shift+B` 即可一鍵編譯並執行：
 
