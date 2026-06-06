@@ -29,7 +29,7 @@ sort(v.begin(), v.end(), greater<int>());  // 由大到小
 // 反轉
 reverse(v.begin(), v.end());
 
-// 找最大最小（需要 #include <algorithm>）
+
 int maxVal = *max_element(v.begin(), v.end());
 int minVal = *min_element(v.begin(), v.end());
 // 注意：前面要加 * 才能取得值，不加 * 只會得到迭代器（位置）

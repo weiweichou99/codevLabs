@@ -37,7 +37,7 @@ a[2]  // → 30（第三個）
 ## 陣列常用操作
 
 ```cpp
-int a[5] = {3, 1, 4, 1, 5};
+int a[5] = {3, 1, 100, 1, 5};
 
 // 取得元素
 a[0];          // 第一個元素 → 3
@@ -64,8 +64,11 @@ sort(a, a + 5);         // 由小到大
 reverse(a, a + 5);      // 反轉順序
 
 // 找最大最小(內建函數)
-int maxVal = *max_element(a, a + 5);
-int minVal = *min_element(a, a + 5);
+int maxVal = *max_element(a, a + 5);  //100
+int maxVal = max_element(a, a + 5);  //2   只找指標
+int minVal = *min_element(a, a + 5);  //1
+int minVal = min_element(a, a + 5);  //1   只找指標
+
 ```
 
 ## 搭配迴圈
