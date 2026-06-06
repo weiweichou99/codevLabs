@@ -59,8 +59,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/project/codevLabs/初階題庫/迴圈/不要學我扮鬼臉",
-      "program": "d:/project/codevLabs/初階題庫/迴圈/不要學我扮鬼臉/build/Debug/outDebug",
+      "cwd": "d:/project/codevLabs/00-C++語法介紹/10-遞迴",
+      "program": "d:/project/codevLabs/00-C++語法介紹/10-遞迴/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
