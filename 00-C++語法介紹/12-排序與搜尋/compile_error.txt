@@ -1,0 +1,7 @@
+D:\project\codevLabs\00-C++語法介紹\12-排序與搜尋\sort_demo.cpp: In function 'int main()':
+D:\project\codevLabs\00-C++語法介紹\12-排序與搜尋\sort_demo.cpp:35:17: error: redeclaration of 'std::vector<int> v'
+   35 |     vector<int> v = {5, 2, 8, 1, 9};
+      |                 ^
+D:\project\codevLabs\00-C++語法介紹\12-排序與搜尋\sort_demo.cpp:8:17: note: 'std::vector<int> v' previously declared here
+    8 |     vector<int> v(n);
+      |                 ^

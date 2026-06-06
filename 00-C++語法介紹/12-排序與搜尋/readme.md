@@ -27,7 +27,9 @@ vector<int> v = {5, 2, 8, 1, 9};
 
 // 方法 1：用內建函數
 // max_element 回傳的是「指向最大值的指標（迭代器）」，不是值本身
-// 所以要加 * 來「取出指標指向的值」（解參考）
+// 所以要加 * 來「取出指標指向的值」（解參考），這樣才能得到實際的數值
+// 例如： *max_element(v.begin(), v.end()) 回傳的是指向 9 的迭代器
+//        max_element(v.begin(), v.end()) 就是 4 這個數值（因為 9 在索引 4）
 int maxVal = *max_element(v.begin(), v.end());  // 9
 int minVal = *min_element(v.begin(), v.end());  // 1
 
