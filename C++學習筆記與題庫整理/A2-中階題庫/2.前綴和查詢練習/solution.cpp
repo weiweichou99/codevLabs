@@ -7,53 +7,44 @@ int main() {
     int n, q;
     cin >> n >> q;
 
-    // ========== 第二步：讀取陣列 ==========
-    vector<long long> arr(n);  // 用 long long 避免數字太大溢位
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+    // ========== 第二步：讀取陣列（1-based） ==========
+    // 使用 1-based 索引，a[1] ~ a[n]
+    vector<long long> a(n + 1);  // 多開一格，a[0] 不使用
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
     }
-    // 範例：arr = [1, 3, -2, 5, 4]
+    // 範例：a[1..5] = [1, 3, -2, 5, 4]
 
-    // ========== 第三步：建立前綴和陣列 ==========
-    // 前綴和的概念：prefix[i] = arr[0] + arr[1] + ... + arr[i]
-    // 這樣要算區間 [l, r] 的總和，只需要 prefix[r] - prefix[l-1]
+    // ========== 第三步：建立前綴和陣列（1-based） ==========
+    // S[i] = a[1] + a[2] + ... + a[i]
+    // S[0] = 0 作為邊界，這樣查詢 [1, r] 時可以用 S[r] - S[0]
     
-    vector<long long> prefix(n);
-    prefix[0] = arr[0];  // 第一個元素的前綴和就是它自己
+    vector<long long> S(n + 1);
+    S[0] = 0;  // 邊界：前 0 個數的總和是 0
     
-    for (int i = 1; i < n; i++) {
-        prefix[i] = prefix[i-1] + arr[i];
-        // prefix[i] = 前面所有數的總和 + 目前這個數
+    for (int i = 1; i <= n; i++) {
+        S[i] = S[i-1] + a[i];
     }
     // 範例：
-    // arr    = [1,  3, -2,  5,  4]
-    // prefix = [1,  4,  2,  7, 11]
-    //           ↑   ↑   ↑   ↑   ↑
-    //           1  1+3 4-2 2+5 7+4
+    // a = [_, 1,  3, -2,  5,  4]  (索引 0 不用)
+    // S = [0, 1,  4,  2,  7, 11]
+    //      ↑  ↑   ↑   ↑   ↑   ↑
+    //      0  1  1+3 4-2 2+5 7+4
 
     // ========== 第四步：處理每個查詢 ==========
     for (int i = 0; i < q; i++) {
-        int l, r;
-        cin >> l >> r;
-        // l, r 是查詢的區間（從 0 開始計算）
+        int L, R;
+        cin >> L >> R;
+        // L, R 是查詢的區間（從 1 開始計算）
 
-        long long sum;
-        
-        if (l == 0) {
-            // 如果從第 0 個開始，直接用 prefix[r]
-            sum = prefix[r];
-        } else {
-            // 否則用 prefix[r] - prefix[l-1]
-            // 這樣就能得到 arr[l] + arr[l+1] + ... + arr[r]
-            sum = prefix[r] - prefix[l-1];
-        }
+        // 區間 [L, R] 的總和 = S[R] - S[L-1]
+        long long sum = S[R] - S[L-1];
         
         cout << sum << endl;
     }
     // 範例查詢：
-    // 查詢 [1, 3]：prefix[3] - prefix[0] = 7 - 1 = 6
-    //              但題目的 Sample Output 是 2...
-    //              注意：題目的索引可能從 1 開始，請依實際題目調整
+    // 查詢 [1, 3]：S[3] - S[0] = 2 - 0 = 2 ✓
+    // 查詢 [2, 5]：S[5] - S[1] = 11 - 1 = 10 ✓
 
     return 0;
 }

@@ -36,7 +36,7 @@ signed main() {
     }
 
     // 印出操作後的差分陣列（debug 用）
-    cout << "diff: ";
+    // cout << "diff: ";
     for(int i = 1; i <= n; i++) cout << diff[i] << " ";
     cout << endl;
 
