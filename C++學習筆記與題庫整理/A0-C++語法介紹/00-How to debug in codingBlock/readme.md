@@ -165,3 +165,39 @@ int power(int a, int b)  // ✓ 正確
 | `F9` | 編譯並執行 |
 | `Ctrl+F9` | 只編譯不執行 |
 | `Ctrl+Shift+F9` | 重新編譯全部 |
+| `Ctrl+Space` | 手動觸發自動完成提示 |
+
+---
+
+## Step 6：開啟自動完成提示（Code Completion）
+
+![006.jpg](006.jpg)
+
+Code::Blocks 有內建的**自動完成功能**，輸入程式碼時會跳出建議清單。
+
+### 設定步驟
+
+1. 點選上方選單 **Settings** → **Editor...**
+2. 在左側選擇 **General settings**
+3. 在右側找到 **Code Completion** 區塊，確認以下設定：
+
+| 設定項目 | 建議值 | 說明 |
+|----------|--------|------|
+| ✓ Code completion | 打勾 | 開啟自動完成功能 |
+| ☐ Case sensitive | 不勾 | 不區分大小寫，更容易找到 |
+| ✓ Autoselect single match | 打勾 | 只有一個選項時自動選取 |
+| Autolaunch after typing # letters | **2** | 輸入 2 個字母後自動觸發（預設是 3） |
+
+### 使用方式
+
+- **自動觸發**：輸入 2 個字母後會自動彈出建議清單
+- **手動觸發**：按 `Ctrl+Space` 強制顯示建議清單
+
+### 關於 `#include <bits/stdc++.h>`
+
+| 寫法 | 自動完成提示 | 說明 |
+|------|--------------|------|
+| `#include <bits/stdc++.h>` | ✓ 可以正常使用 | 競賽常用的萬用標頭檔 |
+| `#include <iostream>` 等 | ✓ 可以正常使用 | 標準寫法 |
+
+> 💡 **結論**：不管用哪種 `#include` 方式，Code Completion 都可以正常運作！
